@@ -1,22 +1,36 @@
-// gracias a [] se guardaran los nombres]
+// gracias a [] se guardarán los nombres
 let amigos = [];
 
-function agregarAmigo(){
+function agregarAmigo() {
     let input = document.getElementById("amigo");
     let nombre = input.value.trim();
+
+    // Validar entrada
+    if (nombre === "") {
+        alert("Ingrese el nombre.");
+        return;
+    }
+
+    // Agregar al array
+    amigos.push(nombre);
+    console.log("Lista de amigos:", amigos);
+
+    // Limpiar campo
+    input.value = "";
+
+    // Mostrar lista
+    mostrarLista();
 }
-if (nombre==="") {
-    alert("ingrese el nombre.");
-    return;
-}
 
-amigos.push(nombre)
-console.log("lista de amigos", amigos);
+function mostrarLista() {
+    let lista = document.getElementById("listaAmigos");
 
-input.value = "";
-mostrarLista()
+    // Limpiar lista antes de actualizar
+    lista.innerHTML = "";
 
-function mostrarLista(){
-    let lista = document.getElementById("listaAmigo");
-    
+    amigos.forEach(amigo => {
+        let li = document.createElement("li");
+        li.textContent = amigo;
+        lista.appendChild(li);
+    });
 }
