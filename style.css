@@ -17,7 +17,7 @@
 
 body {
     height: 100vh;
-    background-color: var(--color-primary);
+    background-image: url(https://i.pinimg.com/1200x/dd/a6/cb/dda6cbf75769dd7fb258413d169a1117.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,9 @@ body {
     align-items: center;
     padding: 40px 0 0;
 }
-
+.header-banner img {
+    width: 20%;
+}
 /* Sección de entrada */
 .input-section {
     flex: 60%;
